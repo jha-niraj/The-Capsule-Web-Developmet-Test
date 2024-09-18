@@ -26,10 +26,12 @@ const MainPage = () => {
 
     const handleDataRetrieval = async () => {
         if(debouncedValue) {
-        const response = await axios.get("https://backend.cappsule.co.in/api/v1/new_search?q=" + debouncedValue +"&pharmacyIds=1,2,3");
-        setData(response.data.data.saltSuggestions);
+            const response = await axios.get("https://backend.cappsule.co.in/api/v1/new_search?q=" + debouncedValue +"&pharmacyIds=1,2,3");
+            setData(response.data.data.saltSuggestions);
         }
     }
+
+    console.log(data);
 
     return (
         <section className="flex flex-col items-center justify-center w-full gap-10">
